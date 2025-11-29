@@ -1,610 +1,409 @@
-<!-- THE BELOW CODE IS THE TEMPLATE OF THE PORTFOLIO SITE || I NOT INCLUDE THE FOLDERS OF CERTIFICATES AND THE SKILLS ALSO THE PROJECTS.
-BUILD THOSE FOLDERS AND USE THE FOLLOWING CODE || 
-I INCLUDE ONE PAGE HTML CSS AND JS IN BELOW FILE -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="shortcut icon" href="/FAV/favicon.ico" type="image/x-icon">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Aditya Patil | Portfolio</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
-    body {
-      background-color: #000;
-      color: #fff;
-    }
-    nav {
-      background-color: #111;
-      padding: 15px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    nav h1 {
-      font-size: 24px;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
-    nav ul li {
-      display: inline;
-    }
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      padding: 60px 30px;
-    }
-    .hero {
-      text-align: center;
-      font-size: 24px;
-    }
-    .hero h2 {
-      font-size: 40px;
-      margin-bottom: 10px;
-    }
-    .typewriter span {
-      color: #00ffcc;
-      font-weight: bold;
-    }
-    .skills, .certificates, .projects {
-      display: grid;
-      gap: 20px;
-    }
-    .skills {
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
-    .skill-box {
-      background: #111;
-      padding: 20px;
-      border: 1px solid white;
-      text-align: center;
-      border-radius: 10px;
-    }
-    .certificates {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-    .cert-box {
-      background: #111;
-      padding: 10px;
-      border-radius: 10px;
-      text-align: center;
-    }
-    .cert-box img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    .projects {
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-    .project-box {
-      background: #111;
-      padding: 20px;
-      border: 1px solid white;
-      border-radius: 10px;
-    }
-    .project-box img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    .contact {
-      max-width: 500px;
-      margin: auto;
-      background: #111;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 5px;
-    }
-    input[type="submit"] {
-      background-color: #00ffcc;
-      color: black;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    input[type="submit"]:hover {
-      background-color: #00cc99;
-    }
-
-    .timeline {
-  position: relative;
-  max-width: 1000px;
-  margin: 40px auto;
-}
-
-.timeline::after {
-  content: '';
-  position: absolute;
-  width: 4px;
-  background-color: white;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  margin-left: -2px;
-}
-
-.container {
-  padding: 20px 40px;
-  position: relative;
-  width: 50%;
-}
-
-.container.left {
-  left: 0;
-}
-
-.container.right {
-  left: 50%;
-}
-
-.container::before {
-  content: " ";
-  position: absolute;
-  top: 22px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background-color: #00ffcc;
-  border: 4px solid white;
-  z-index: 1;
-}
-
-.container.left::before {
-  right: -10px;
-}
-
-.container.right::before {
-  left: -10px;
-}
-
-.content {
-  padding: 20px;
-  background-color: #111;
-  position: relative;
-  border-radius: 10px;
-  border: 1px solid white;
-}
-
-.container.left .content {
-  margin-left: auto;
-  margin-right: 20px;
-}
-
-.container.right .content {
-  margin-left: 20px;
-  margin-right: auto;
-}
-
-/* Base styles for mobile-first design */
-.timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 20px;
-}
-
-.container {
-  position: relative;
-  width: 100%;
-  padding: 15px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.container.left, .container.right {
-  background-color: rgb(255, 183, 0);
-  border-radius: 10px;
-  padding: 20px;
-  width: 100%;
-}
-
-.content {
-  padding: 10px;
-  text-align: left;
-  background-color: #fff;
-  border-radius: 8px;
-  width: 100%;
-}
-
-h3 {
-  font-size: 1.2rem;
-  margin: 0;
-  color: #f70d0d;
-}
-
-p {
-  font-size: 1rem;
-  color: #ffffff;
-}
-
-/* Layout for mobile */
-@media (min-width: 600px) {
-  .timeline {
-    flex-direction: column;
-  }
-  .container.left, .container.right {
-    width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-}
-
-/* For tablets and larger devices */
-@media (min-width: 768px) {
-  .timeline {
-    flex-direction: column;
-  }
-
-  .container {
-    width: 48%;
-  }
-
-  .container.left {
-    margin-left: 2%;
-    font-size: 14px;
-  }
-
-  .container.right {
-    margin-left: 50%;
-  }
-
-  /* For desktop */
-  @media (min-width: 1024px) {
-    .container.left, .container.right {
-      width: 45%;
-    }
-
-    .container.left {
-      margin-left: 5%;
-    }
-
-    .container.right {
-      margin-left: 50%;
-    }
-  }
-}
-
-
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adityaraj Patil</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/assets/FAV/favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">ASP</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#journey">Journey</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#Books">Books</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
-<nav>
-  <ul>
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#certificates">Certificates</a></li>
-  </ul>
-</nav>
-
-<section id="home" class="hero">
-  <h2>Hello, I'm AdityaRaj Sunil Patil</h2>
-  <div class="typewriter">A <span id="changing-text">Web Developer</span></div>
-</section>
-
-<section id="about" style="text-align: center; font-size: 20px;font-weight: 700;">
-  <p> Hi, I’m Adityaraj Patil, a passionate full-stack web developer, tech enthusiast, and the CEO of DevineTech. I love building innovative tech  <br> solutions, from websites to IoT projects, and sharing my knowledge through community leadership and content creation. Let’s connect and <br>build something great together!</p>
-</section>
-
-<section id="skills">
-  <h2>Skills</h2><br>
-
-  <div class="skills">
-    
-    <div class="skill-box">HTML | CSS</div>
-    <div class="skill-box">JavaScript</div>
-    <div class="skill-box">Express JS</div> 
-    <div class="skill-box">React</div>
-    <div class="skill-box">Node.js</div>
-    <div class="skill-box">MySQL | Mongo DB</div>
-    <div class="skill-box"> AI / ML </div>
-
- 
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="glowing-text">Hi, I'm Adityaraj Patil</h1>
+                <h2 class="subtitle">Full Stack Developer</h2>
+                <p class="hero-description">
+                   I’m Adityaraj Patil, a full-stack developer passionate about crafting fast, scalable web applications and innovative tech products.
 
 
-  </div>
-</section>
+                </p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Let's Connect</a>
+                    <a href="/RESUME/FULL STACK WEB DEVELOPMENT 2025.pdf" download="adityaraj-resume" class="btn btn-outline">Resume</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/aspatil0" class="social-icon"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/adityarajpatil/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://x.com/patil_aditya29" class="social-icon"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
-<section id="projects">
-  <h2>Projects</h2>
-  <br>
-  <br>
-<h2>Projects : HTML | CSS | JS (25+)</h2>
-      <br><br>
-  <div class="projects">
-      
-
-    <div class="project-box">
-      <img src="/projects/dt-1.png" alt="Project 1">
-      <h3>DEVINETECH WEBSITE</h3>
-      <p>HTML,CSS,API,JS,BOOTSTRAP</p>
-    </div>
-    <div class="project-box">
-      <img src="/projects/quizee.png" alt="Project 2">
-      <h3>QUIZEE WEBISTE</h3>
-      <p>HTML,CSS,JS </p>
-    </div>
-    <div class="project-box">
-      <img src="/projects/tesnary.png" alt="Project 3">
-      <h3>E-STATIONARY WEBSITE</h3>
-      <p>HTML,CSS AND JS</p>
-    </div>
-    <div class="project-box">
-      <img src="/projects/portfolio.png" alt="Project 4">
-      <h3>SAMPLE PORTFOLIO WEBSITE</h3>
-      <p>HTML,CSS AND JS</p>
-    </div> 
-<!--------------------------------- PHP ABSED -->
-</div>
-<br>
-<h2> PHP AND MYSQL BASED PROJECTS (15+)</h2>
-<br>
-  <div class="projects">
-
- <div class="project-box">
-      <img src="/projects/cc-lab.png" alt="Project 4">
-      <h3>COMPUTER LAB MANAGEMENT WEBSITE</h3>
-      <p>FRONTEND + PHP + MYSQL</p>
-    </div><div class="project-box">
-      <img src="/projects/mfi.png" alt="Project 4">
-      <h3>MISSION FEED INDIA</h3>
-      <p>FRONTEND + PHP + MYSQL</p>
-    </div><div class="project-box">
-      <img src="/projects/hospital man.png" alt="Project 4">
-      <h3>HOSPITAL MANAGEMENT WEBSITE</h3>
-      <p>API + FRONTEND + PHP & SQL</p>
-    </div><div class="project-box">
-      <img src="/projects/PORTFOLIO-PHP.png" alt="Project 4">
-      <h3>ONLINE CODED PORTFOLIO SELLER</h3>
-      <p>FRONTEND + PHP + MYSQL</p>
-    </div>
-  </div>
-
-  <br>
-  <h2>IOT BASED PORJECTS(5+)</h2>
-  <br>
-    <div class="projects">
-
- <div class="project-box">
-      <img src="/projects/women safety.jpeg" alt="Project 4">
-      <h3>IOT WOMEN SAFETY DEVICE</h3>
-      <p> AURDINO UNO & SIM 99A </p>
-      <p>TCOER PROJECT FIRST WINNER</p>
-
-      <p>VIT PROJECT SECOND WINNER</p>
-    </div><div class="project-box">
-      <img src="/projects/ROBOTIC ARM.png" alt="Project 4">
-      <p><br></p>
-      <h3>ROBOTIC ARM PROJECT</h3>
-      <p>AURDNIO, MOTERS, SENSORS</p>
-      <p>TCOER MODEL TOP PROJECT</p>
-    </div><div class="project-box">
-      <img src="/projects/iot-anti sleep alaram.png" alt="Project 4" height="200px">
-      <h3>ANTI SLEEP ALARM AND <br> BREAK SYSTEM</h3>
-      <p>API + AURDNIO, MOTERS, SENSORS</p>
-    </div><div class="project-box">
-      <img src="/projects/smart bin.jpg" alt="Project 4" height="200">
-      <h3>THE SMART DUSTBIN PROJECT</h3>
-      <p>AURDINO UNO & ULTRA SENSOR AND SERVO</p>
-    </div>
-  </div>
-<br>
-  <H2>MERN STACK | MONGODB , EXPRESS , NODE , REACT</H2>
-  <br>
-    <div class="projects">
-
- <div class="project-box">
-      <img src="/projects/mern _ personal finance.png" alt="Project 4">
-      <h3>PERSONAL FINANCE MANAGER </h3>
-      <p> MERN STACK </p>
-
-    </div>
-    
-    <div class="project-box">
-      <img src="/projects/TODO.png" alt="Project 4" height="200">
-      <h3>TO DO LIST WEBSITE </h3>
-      <p>MERN STACK</p>
-    </div><div class="project-box">
-      <img src="/projects/SOCIAL FITNESS.png" alt="Project 4" height="200">
-      <h3>FITNESS WEBSITE</h3>
-      <p>MERN STACK</p>
-    </div>
-  </div>
-</section>
+    <!-- Journey Section -->
+    <section id="journey">
+        <h2 class="section-title">My Journey</h2>
+        <div class="journey-container">
+            <div class="journey-column">
+                <!-- <h3 class="column-title">Education</h3> -->
+                <div class="journey-card">
+                    <h4>TRINITY COLLEGE STUDENT COUNCIL PRESIDENT</h4>
+                    <p class="year">2022 - 2023</p>
+                    <p class="description">Served as the President of Trinity College of Engineering and Research (2022–2023), 
+                        leading student initiatives, events, and technical communities.
+Organized and managed college‑wide programs, fostering innovation and collaboration among 1500+ students.</p>
+                </div>
+                <div class="journey-card">
+                    <h4>CONDUCT 20+ SESSIONS ON TECH DEVELOPMENT</h4>
+                    <p class="year">2024-2025</p>
+                    <p class="description">Conducted 20+ hands‑on sessions on Web Development at TCOER, training and mentoring 350+ students.
+Focused on modern web technologies, enhancing students’ practical skills and project readiness.</p>
+                </div>
+                 <div class="journey-card">
+                    <h4>GOOGLE DEVLOPER GROUP(GDG) WEB DEV LEAD</h4>
+                    <p class="year">2024-2025</p>
+                    <p class="description">Google Developer Student Club (GDSC) – Web Development Lead (2024–2025), spearheading all web projects and initiatives.
+Led workshops, mentorship sessions, and team projects, enhancing students’ web development skills and community engagement.</p>
+                </div>
+                 <div class="journey-card">
+                    <h4>Recognized for Projects</h4>
+                    <p class="year">2024</p>
+                    <p class="description">Recognized for developing multiple innovative projects, including a Women Safety Device (Winner – TCOER Technical Exhibition 2024, Runner‑up – VIT Hackathon 2024) and an IoT‑based QR Fraud Detection Scanner.
+Also created a Color‑Detecting Robotic Arm and CoupleMate, an AI/ML‑powered matchmaking and real‑time chat platform.
+</p>
+                </div>
+            </div>
 
 
 
-<!-- --------------------------------------------CERTIFICATES---------------------------- -->
+            <div class="journey-column">
+                <!-- <h3 class="column-title">Experience</h3> -->
+                <div class="journey-card">
+                    <h4>HACKETHON WINNER</h4>
+                    <p class="year">2024</p>
+                    <p class="description">Winner of TCOER Technical Exhibition 2024 for developing an innovative Women Safety Device.
+Runner‑up at VIT National Level Hackathon 2024, showcasing the same project among top competing teams.</p>
+                </div>
+                <div class="journey-card">
+                    <h4>CORE Vice President</h4>
+                    <p class="year">2024-2025</p>
+                    <p class="description">Served as Vice President of the Computer Core Committee , leading technical events and student initiatives.
+Coordinated workshops, coding challenges, and inter‑college competitions to enhance the technical culture in the department.</p>
+                </div>
+                 <div class="journey-card">
+                    <h4>Founder & CEO Devine tech</h4>
+                    <p class="year">2025</p>
+                    <p class="description">Founder & CEO of DevineTech (2025–Present), a startup providing web development, digital solutions, and IoT services.
+Built and managed multiple client projects, internships, and training programs, fostering innovation and technical growth.</p>
+                </div>
+                 <div class="journey-card">
+                    <h4>Co-Founder & Partner Menteronics</h4>
+                    <p class="year">2025</p>
+                    <p class="description">Co‑Founder & Partner at Menteronics, formed through the merger of NodeMedia and DevineTech.
+Collaborated on tech innovation, training programs, and digital solutions, driving growth and joint ventures.</p>
+                </div>
+                 <div class="journey-card">
+                    <h4>IOT CLUB LEAD</h4>
+                    <p class="year">2025</p>
+                    <p class="description">Lead of IOT Club By which I help students to build projects</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section id="certificates">
-  <h2>Achivemenets / Certificates</h2>
-  <br>
-  <br>
-  <div class="certificates">
-    <div class="cert-box">
-      <img src="/certificates/MERN-UDEMY.png" alt="Certificate 1">
-      <p>MERN STACK CERTIFICATION FROM UDEMY</p>
-    </div>
-    <div class="cert-box">
-      <img src="/certificates/WEB-DEV-UDEMY.png" alt="Certificate 2">
-      <p>WEB DEVELOPMENT FROM UDEMY</p>
-    </div>
-    <div class="cert-box">
-      <img src="/certificates/prompt-engi.png" alt="Certificate 3">
-      <p>PROMPT ENGINEERING FROM SKILL LEARN</p>
-    </div>
-      <div class="cert-box">
-      <img src="/certificates/GIT UDEMY.png" alt="Certificate 6">
-      <p>GIT AND GITHUB FROM SKILL LEARN</p>
-    </div>
-    <div class="cert-box">
-      <img src="/certificates/github vap2.png" alt="Certificate 4">
-      <p>SESSION ON GITHUB IN TCOER COLLEGE</p>
-    </div>
-    <div class="cert-box">
-      <img src="/certificates/vap1.png" alt="Certificate 5">
-      <p>SESSION ON WEB DEV IN TCOER COLLEGE</p>
-    </div>
-  
-    <div class="cert-box">
-      <img src="/certificates/cdac Ar-vr.png" alt="Certificate 7">
-      <p>CDAC CERTIFICATION ON AR-VR</p>
-    </div>
-    <div class="cert-box">
-      <img src="/certificates/gdg cer.png" alt="Certificate 8">
-      <p>GOOGLE DEVLOEPR GROUP CERTIFICATION</p>
-    </div>
-    <div class="cert-box">
-      <img src="/certificates/EYGDS.png" alt="Certificate 9">
-      <p>EYGDS INTERNSHIP CERTIFICATE</p>
-    </div>
-    <div class="cert-box">
-      <img src="/certificates/JAVA-UDEMY.png" alt="Certificate 10">
-      <p>JAVA COURSE FROM UDEMY</p>
-    </div>
-   
-  </div>
-</section>
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">My Skills</h2>
+        <div class="skills-container">
+            <div class="skills-column">
+                <h3 class="column-title">Coding Skills</h3>
+                <div class="skill-bars">
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span>HTML5/CSS3</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="progress-line"><span data-percent="95"></span></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span>JavaScript</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress-line"><span data-percent="90"></span></div>
+                    </div>
+                      <div class="skill-bar">
+                        <div class="skill-info">
+                            <span>React.js | Next.js</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress-line"><span data-percent="90"></span></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span>MERN STACK</span>
+                            <span>83%</span>
+                        </div>
+                        <div class="progress-line"><span data-percent="85"></span></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span>Proficient in leveraging AI tools</span>
+                            <span>93%</span>
+                        </div>
+                        <div class="progress-line"><span data-percent="85"></span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skills-column">
+                <h3 class="column-title">Professional Skills</h3>
+                <div class="skill-bars">
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span>UI/UX Design</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="progress-line"><span data-percent="85"></span></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span>Problem Solving</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="progress-line"><span data-percent="90"></span></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span>Communication</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="progress-line"><span data-percent="95"></span></div>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-info">
+                            <span>Leadership</span>
+                            <span>99%</span>
+                        </div>
+                        <div class="progress-line"><span data-percent="95"></span></div>
+                    </div>
+                     <div class="skill-bar">
+                        <div class="skill-info">
+                            <span>Team Work</span>
+                            <span>99%</span>
+                        </div>
+                        <div class="progress-line"><span data-percent="95"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-container">
+            <!-- <div class="project-card">
+                <img src="assets/projects/couplemate.png" alt="Project 1">
+                <h3>TE-AMO</h3>
+                <p>
+                    A COUPLE MATCH AND DATING SITE WHERE USER REGITER AND FIND MATCH AND START CHAT
+                </p>
+                <a href="https://adi-couplemate.vercel.app/" class="visit-btn">Visit Site</a>
+            </div> -->
+            <div class="project-card">
+                <img src="assets/projects/take-it-easy.png" alt="Project 2">
+                <h3>TAKE IT EASY</h3>
+                <p>
+                    IT A EDUCATIONAL SITE HELP STUDENTS TO GET ROADMAPS OF COURSE ALSO THE WAY TO REACH GOAL EASY WAY
+                </p>
+                <a href="https://lettake-it-easy.netlify.app/" class="visit-btn">Visit Site</a>
+            </div>
+            <div class="project-card">
+                <img src="assets/projects/TIC-TAC-TOE.png" alt="Project 3">
+                <h3>TIC-TAC-TOE</h3>
+                <p>
+                    BUILDING THE GAME OF TIC TAC TOE USE THE NEON EFFECTS TO ENHANCE VIEW ALSO THE WINNER NAME IS SHOWN
+                </p>
+                <a href="https://aditya-tictactoe.vercel.app/" class="visit-btn">Visit Site</a>
+            </div>
+             <div class="project-card">
+                <img src="assets/projects/TODO.png" alt="Project 3">
+                <h3>TO DO LIST WEBSITE</h3>
+                <p>
+                    BUILDING THE TO-DO SITE FOR MANAGE MY OWN WORK ALSO HAS LOCAL STORGAE THAT HELPS TO STORE DATA IN BROWSER
+                </p>
+                <a href="https://adi-todo.netlify.app/" class="visit-btn">Visit Site</a>
+            </div>
+             <div class="project-card">
+                <img src="assets/projects/dt-1.png" alt="Project 3">
+                <h3>BUSINESS DEVINETECH SITE</h3>
+                <p>
+                    A BUSINESS SITE BUILD FOR PROVIDE A PLATFORM FOR STUDNETS INTERNSHIP AND THE CLIENT MANAGEMENT
+                </p>
+                <a href="https://devine-tech.netlify.app/" class="visit-btn">Visit Site</a>
+            </div>
+            <div class="project-card">
+                <img src="assets/projects/tesnary.png" alt="Project 3">
+                <h3>E-STATIONARY SITE</h3>
+                <p>
+                   BUILDING A E-STATIONARY SITE FOR LOCAL SHOP OWNERS TO MANAGE THEIR BUSINESS OFLINE ALSO ALL MANAGE WITHOUT DATABASE PURCHASE
+                </p>
+                <a href="https://tesnary.netlify.app/" class="visit-btn">Visit Site</a>
+            </div>
+        </div>
+        <div class="see-more-container">
+            <a href="projects.html" class="btn btn-primary see-more-btn">
+                <span>See All Projects</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
 
 
-<!-- <section id="achievements">
-  <h2>Achievements</h2>
-  <div class="timeline">
-    <div class="container left" style="background-color:  rgb(255, 183, 0);">
-      <div class="content">
-        <h3> JAN 2023-24 </h3>
-        <p>TCOER FY PRESIDENT AND COLLEGE LEAD MEMBER</p>
-      </div>
-    </div>
-    <div class="container right">
-      <div class="content">
-        <h3>  JAN 2024-25</h3>
-        <p>START OFFLINE FREELANCING AND BUILD PAID 25+ MINI AND MEGA PROJECTS FOR STUDENTS</p>
-      </div>
-    </div>
-      <div class="container left">
-      <div class="content">
-        <h3>OCT 2024</h3>
-        <p>FIRST WINNER FOR IOT PROJECT ( WOMEN SAFETY DEVICE )</p>
-      </div>
-    </div>
-    
-    <div class="container right" style="background-color:  rgb(255, 183, 0);">
-      <div class="content">
-        <h3>JAN 2025</h3>
-        <p>START MY DREAM COMPANY DEVINETECH SOLUTIONS</p>
-      </div>
-    </div>
-    <div class="container left">
-      <div class="content">
-        <h3>MARCH 2025</h3>
-        <p> TRAIN 150+ STUDENTS AND BUILD TEAM AS INTERN</p>
-      </div>
-    </div>
-     <div class="container right" style="background-color:  rgb(255, 183, 0);">
-      <div class="content">
-        <h3>APRIL 2025</h3>
-        <p>LAUNCH OFFICIAL INTERNSHIP PORTAL AT DEVINETECH SOLUTIONS</p>
-      </div>
-    </div>
-     <div class="container left">
-      <div class="content">
-        <h3>APRIL 2025</h3>
-        <p>CONDUCT 7+ SESSION ON GITHUB , WEB DEV , AI/ML IN TCOER</p>
-      </div>
-    </div>
-  </div>
-</section> -->
+<!-- BOOKS SECTION BY ME -->
+<!-- Certificates Section -->
+    <section id="Books">
+        <h2 class="section-title">My Books</h2>
+
+        <div class="projects-container certificates-container">
+            <div class="project-card">
+                <img src="Books/last 6 days.png" alt="Web Development Certificate" class="certificate-img">
+                <h3>Last Six Days</h3>
+                <p>
+                    Last 6 Days follows a women trapped in a tense countdown as hidden truths surface around him. Each day brings new danger, forcing her to confront secrets she can’t escape. A sharp, gripping thriller told in just six days.
+                </p>
+            </div>
+             <div class="project-card">
+                <img src="Books/the love i cant bhold.png" alt="Web Development Certificate" class="certificate-img">
+                <h3>The Love I Can't Hold</h3>
+                <p>
+                   The Love I Can’t Hold is a heartfelt story of loving deeply but losing slowly. It follows a boy torn between holding on and protecting his own heart. A simple, emotional tale of love, pain, and letting go.
+                </p>
+            </div>
+             <div class="project-card">
+                <img src="Books/do you still love me.png" alt="Web Development Certificate" class="certificate-img">
+                <h3>Do You Still Love Me ?</h3>
+                <p>
+                    Do You Still Love Me? is a tender story about two people drifting apart yet holding onto the last thread of hope. It explores unspoken feelings, hidden pain, and the fear of losing someone forever. A soft, emotional journey of love, doubt, and longing.
+                </p>
+            </div>
+        </div>
+        <div class="see-more-container">
+            <a href="Books.html" class="btn btn-primary see-more-btn">
+                <span>See More Books</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
 
 
 
 
-<!-- Add Font Awesome in your <head> -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<section id="contact">
-  <h2>Contact Me</h2>
-
-  <div class="contact">
-    <h4>ADITYA PATIL</h4>
-    <br>
-    <h4>M.NO : 8669792979</h4>
-    <h4>MAIL : ASPATIL2904@GMAIL.COM</h4>
-<br>
-    <!-- Social Icons -->
-    <div class="social-icons">
-     
-      <a href="https://www.linkedin.com/in/adityaraj-patil-6a6525252/" target="_blank" title="LinkedIn">
-        <i class="fab fa-linkedin" style="font-size: 25px; color:  yellow;"></i>
-      </a>
-       
-
-       <a href="https://github.com/aspatil0" target="_blank" title="LinkedIn">
-        <i class="fab fa-github" style="font-size: 25px; color:  yellow;"></i>
-      </a>
-    </div>
-
-    <!-- Contact Form -->
-    <form action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="95597e28-7659-47e7-a260-944611939c1a">
-
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      
-      <input type="submit" value="Send">
-    </form>
-  </div>
-</section>
 
 
-<script>
-  const texts = ["Full Stack Developer", "UI/UX Designer", "Freelancer", "Tech Enthusiast","Entrepreneur"];
-  let count = 0;
-  let textIndex = 0;
-  let currentText = '';
-  let letter = '';
-  (function type(){
-    if (count === texts.length) count = 0;
-    currentText = texts[count];
-    letter = currentText.slice(0, ++textIndex);
 
-    document.getElementById('changing-text').textContent = letter;
 
-    if (letter.length === currentText.length) {
-      count++;
-      textIndex = 0;
-      setTimeout(type, 2000);
-    } else {
-      setTimeout(type, 100);
-    }
-  })();
-</script>
 
+    <!-- Certificates Section -->
+    <section id="certificates">
+        <h2 class="section-title">My Certificates</h2>
+        <div class="projects-container certificates-container">
+            <div class="project-card">
+                <img src="assets/certificates/webdev-udemy.png" alt="Web Development Certificate" class="certificate-img">
+                <h3>Web Development</h3>
+                <p>
+                    Proficient in modern Web Development, with hands‑on experience in HTML, CSS, JavaScript, PHP, and MySQL.
+Skilled in creating responsive, user‑friendly, and dynamic websites with practical project experience.
+                </p>
+                <span class="certificate-issuer">Issued by: UDEMY</span>
+            </div>
+            <div class="project-card">
+                <img src="assets/certificates/MERN-UDEMY.png" alt="JavaScript Advanced Certificate" class="certificate-img">
+                <h3>MERN STACK</h3>
+                <p>
+                   Completed a Udemy Certification on MERN Stack Development, mastering MongoDB, Express.js, React, and Node.js.
+Gained hands‑on experience in building full‑stack web applications with modern and scalable architecture.
+                </p>
+                <span class="certificate-issuer">Issued by: UDEMY</span>
+            </div>
+        </div>
+        <div class="see-more-container">
+            <a href="certificates.html" class="btn btn-primary see-more-btn">
+                <span>See All Certificates</span>
+                <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </section>
+
+
+
+    <!-- Blogs by adi-->
+
+
+
+
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-card">
+                    <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+                    <input type="hidden" name="access_key" value="95597e28-7659-47e7-a260-944611939c1a">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary submit-btn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>aspatil2904@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 8669792979</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Pune, India</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Adityaraj Patil. All rights reserved.</p>
+        <div class="footer-social">
+           <a href="https://github.com/aspatil0" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/adityarajpatil/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            <a href="https://x.com/patil_aditya29" class="social-icon"><i class="fab fa-twitter"></i></a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
+
